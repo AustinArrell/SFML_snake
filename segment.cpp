@@ -13,7 +13,7 @@ void segment::draw(sf::RenderWindow& window) const
 	window.draw(sprite);
 }
 
-void segment::set_pos(float x, float y)
+void segment::set_pos(int x, int y)
 {
     pos.x = x;
     pos.y = y;

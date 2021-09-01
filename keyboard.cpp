@@ -3,7 +3,7 @@
 #include "head.hpp"
 #include "globals.hpp"
 
-void handle_input(const sf::Event& e, const head& s)
+void handle_input(const sf::Event& e, head& s)
 {
     switch (e.key.code) 
     {

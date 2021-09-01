@@ -7,4 +7,4 @@ namespace sf
 
 class head;
 
-void handle_input(const sf::Event& e, const head& s);
+void handle_input(const sf::Event& e, head& s);
