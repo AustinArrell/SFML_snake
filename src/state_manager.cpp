@@ -17,11 +17,11 @@ void handle_events(const sf::Event& e)
 
 void change_state(std::string s)
 {
+    // TODO: Ensure s is a valid state
     if(current_state)
         current_state->cleanup();
     current_state = state_map[s];
     current_state->startup();
-    
 }
 
 void update_state()

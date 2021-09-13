@@ -29,13 +29,13 @@ void head::draw(sf::RenderWindow& window) const
 bool head::check_collisions(){
     if (pos.x >= window_width / tile_size)
         return true;
-    
+
     if (pos.x < 0)
         return true;
-    
+
     if (pos.y < 0)
         return true;
-    
+
     if (pos.y >= window_height / tile_size)
         return true;
 
@@ -52,7 +52,7 @@ bool head::check_collisions(){
 void head::update()
 {
 
-    //set each segment pos to the one in front of it. 
+    //set each segment pos to the one in front of it.
     for (int i = segment_stack.size()-1; i > 0; i--)
     {
         segment_stack[i].set_pos(segment_stack[i-1].get_pos());
@@ -82,8 +82,8 @@ void head::update()
         break;
     }
 
-    sprite.setPosition({ pos.x * tile_size, pos.y * tile_size });
-    
+    sprite.setPosition({ static_cast<float>(pos.x * tile_size), static_cast<float>(pos.y * tile_size)});
+
 }
 
 bool head::validate_location(sf::RectangleShape& other_obj)
@@ -93,7 +93,7 @@ bool head::validate_location(sf::RectangleShape& other_obj)
         if(other_obj.getGlobalBounds().intersects(seg.get_sprite().getGlobalBounds()))
             return false;
     }
-    
+
     return true;
 }
 
