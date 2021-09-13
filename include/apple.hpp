@@ -13,8 +13,14 @@ class apple
 public:
     apple();
 
-    void spawn();
+    void move();
+
+    void update();
 
     void draw(sf::RenderWindow& w);
+
+    sf::Vector2i& get_pos();
+
+    sf::RectangleShape& get_sprite();
 
 };

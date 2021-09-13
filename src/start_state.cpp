@@ -37,5 +37,5 @@ void start_state::cleanup()
 
 void start_state::startup()
 {
-
+    player.update();
 }

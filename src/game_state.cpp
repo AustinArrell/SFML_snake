@@ -33,7 +33,7 @@ void game_state::handle_events(const sf::Event& e)
         break;
 
     case sf::Keyboard::Space:
-        food.spawn();
+        food.move();
         break;
     
     default:
@@ -44,12 +44,31 @@ void game_state::handle_events(const sf::Event& e)
 void game_state::update()
 {
     player.update();
+    food.update();
+
+    //Check if the apple and the head are touching
+    if (player.get_sprite().getGlobalBounds().intersects(food.get_sprite().getGlobalBounds()))
+    {
+        food.move();
+        player.generate_segment();
+    }
+
+    while (!player.validate_location(food.get_sprite()))
+    {
+        food.move();
+    }
+
+    if (player.check_collisions())
+    {
+        change_state("end");
+    }
 }
 
 void game_state::draw(sf::RenderWindow& w)
 {
-    player.draw(w);
     food.draw(w);
+    player.draw(w);
+    
 }
 
 void game_state::cleanup()

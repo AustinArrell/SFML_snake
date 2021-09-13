@@ -6,6 +6,7 @@
 #include "state_manager.hpp"
 #include "start_state.hpp"
 #include "game_state.hpp"
+#include "end_state.hpp"
 #include "number_gen.hpp"
 
 int main()
@@ -16,9 +17,11 @@ int main()
 
     start_state start_state(player);
     game_state game_state(player);
+    end_state end_state(player);
 
     add_state("start",start_state);
     add_state("game",game_state);
+    add_state("end",end_state);
     change_state("start");
 
     sf::Clock clock;

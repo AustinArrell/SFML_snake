@@ -14,18 +14,11 @@ class head
     sf::Vector2i pos = { window_width/tile_size/2, window_height/tile_size/2};
     
     direction dir;
-
-    bool check_collisions();
-
-    bool reset();
     
 public:
+    bool check_collisions();
 
     head();
-
-    void set_dir(direction d);
-
-    direction get_dir() const;
 
     void draw(sf::RenderWindow& window) const;
 
@@ -33,4 +26,17 @@ public:
 
     void generate_segment();
 
+    bool validate_location(sf::RectangleShape& pos_to_check);
+
+    void clear_stack();
+
+    void set_dir(direction d);
+
+    direction get_dir() const;
+
+    const sf::Vector2i& get_pos();
+
+    const sf::RectangleShape& get_sprite();
+
+    void set_pos(int x, int y);
 };

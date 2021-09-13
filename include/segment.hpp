@@ -21,4 +21,6 @@ public:
 
     sf::Vector2i get_pos();
 
+    sf::RectangleShape& get_sprite();
+
 };

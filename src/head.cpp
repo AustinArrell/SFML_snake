@@ -26,33 +26,28 @@ void head::draw(sf::RenderWindow& window) const
     }
 }
 
-bool head::check_collisions()
-{
-    switch(dir)
-    {
-        case direction::RIGHT:
-            if (pos.x >= window_width / tile_size)
-                return true;
-            break;
-        
-        case direction::LEFT:
-            if (pos.x <= 0)
-                return true;
-            break;
+bool head::check_collisions(){
+    if (pos.x >= window_width / tile_size)
+        return true;
+    
+    if (pos.x < 0)
+        return true;
+    
+    if (pos.y < 0)
+        return true;
+    
+    if (pos.y >= window_height / tile_size)
+        return true;
 
-        case direction::UP:
-            if (pos.y <= 0)
-                return true;
-            break;
-        
-        case direction::DOWN:
-            if (pos.y >= window_height / tile_size)
-                return true;
-            break;
+    for (auto& seg : segment_stack)
+    {
+        if (sprite.getGlobalBounds().intersects(seg.get_sprite().getGlobalBounds()))
+            return true;
     }
 
     return false;
 }
+
 
 void head::update()
 {
@@ -88,7 +83,28 @@ void head::update()
     }
 
     sprite.setPosition({ pos.x * tile_size, pos.y * tile_size });
+    
+}
 
+bool head::validate_location(sf::RectangleShape& other_obj)
+{
+    for (auto& seg : segment_stack)
+    {
+        if(other_obj.getGlobalBounds().intersects(seg.get_sprite().getGlobalBounds()))
+            return false;
+    }
+    
+    return true;
+}
+
+void head::clear_stack()
+{
+    segment_stack.clear();
+}
+
+void head::generate_segment()
+{
+    segment_stack.emplace_back();
 }
 
 void head::set_dir(direction d)
@@ -101,7 +117,18 @@ direction head::get_dir() const
     return dir;
 }
 
-void head::generate_segment()
+const sf::Vector2i& head::get_pos()
 {
-    segment_stack.emplace_back();
+    return pos;
+}
+
+const sf::RectangleShape& head::get_sprite()
+{
+    return sprite;
+}
+
+void head::set_pos(int x, int y)
+{
+    pos.x = x;
+    pos.y = y;
 }

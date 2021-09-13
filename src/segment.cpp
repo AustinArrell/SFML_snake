@@ -32,3 +32,8 @@ sf::Vector2i segment::get_pos()
 {
     return pos;
 }
+
+sf::RectangleShape& segment::get_sprite()
+{
+    return sprite;
+}
