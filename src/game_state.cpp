@@ -1,6 +1,7 @@
 
 #include "game_state.hpp"
 
+
 game_state::game_state(head& h):
     player {h}
     {
@@ -30,6 +31,10 @@ void game_state::handle_events(const sf::Event& e)
         if(player.get_dir() != direction::UP) 
             player.set_dir(direction::DOWN);
         break;
+
+    case sf::Keyboard::Space:
+        food.spawn();
+        break;
     
     default:
         break;
@@ -44,6 +49,7 @@ void game_state::update()
 void game_state::draw(sf::RenderWindow& w)
 {
     player.draw(w);
+    food.draw(w);
 }
 
 void game_state::cleanup()

@@ -6,6 +6,7 @@ segment::segment() :
     sprite {{ tile_size,tile_size }}
 {
     sprite.setFillColor(sf::Color::Green);
+    
     sprite.setPosition(-200,-200);
 }
 

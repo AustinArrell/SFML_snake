@@ -13,7 +13,7 @@ head::head()
 
     sprite.setPosition(pos.x * tile_size, pos.y * tile_size);
 
-    sprite.setFillColor(sf::Color::Green);
+    sprite.setFillColor(sf::Color::Blue);
 }
 
 void head::draw(sf::RenderWindow& window) const

@@ -6,13 +6,15 @@
 #include "state_manager.hpp"
 #include "start_state.hpp"
 #include "game_state.hpp"
+#include "number_gen.hpp"
 
 int main()
 {
+    print_random_range();
     sf::RenderWindow window(sf::VideoMode(window_width, window_height), "SNEK");
     
     head player;
-    
+
     start_state start_state(player);
     game_state game_state(player);
 

@@ -3,6 +3,7 @@
 
 #include "state_manager.hpp"
 #include "head.hpp"
+#include "apple.hpp"
 
 class game_state : public state
 {
@@ -17,6 +18,8 @@ class game_state : public state
     void startup() override;
 
     head& player;
+
+    apple food;
 
 public:
     game_state(head& h);
