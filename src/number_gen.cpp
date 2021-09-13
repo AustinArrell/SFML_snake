@@ -3,18 +3,28 @@
 
 #include <iostream>
 #include <chrono>
+#include <vector>
 
-//std::random_device rd;
-
+//Default seed derived from current time
 unsigned seed = std::chrono::steady_clock::now().time_since_epoch().count();
-std::mt19937 gen(seed);
 
-void print_random_range()
+//Create generators
+std::default_random_engine gen_default(seed);
+std::mt19937 gen_mt19937(seed);
+
+//Generates a random number in the given range using the default random engine.
+//Seeded with the time.
+int rand_range(int min, int max)
 {
-    std::cout << "Min: " <<gen.min() << "\n";
-    std::cout << "Max: " <<gen.max() << "\n";
+    std::uniform_int_distribution<int> range(min,max);
+    return range(gen_default);
+}
 
-    std::cout << "1: " <<gen() << "\n";
-    std::cout << "2: " <<gen() << "\n";
-    std::cout << "3: " <<gen() << "\n";
+//Generates a random number in the given range using the default random engine.
+//Takes in a custom seed.
+int rand_range(int min, int max, unsigned seed)
+{
+    gen_default.seed(seed);
+    std::uniform_int_distribution<int> range(min,max);
+    return range(gen_default);
 }

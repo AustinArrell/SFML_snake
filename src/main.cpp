@@ -10,7 +10,6 @@
 
 int main()
 {
-    print_random_range();
     sf::RenderWindow window(sf::VideoMode(window_width, window_height), "SNEK");
     
     head player;

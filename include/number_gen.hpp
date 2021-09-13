@@ -1,3 +1,5 @@
 #include <random>
 
-void print_random_range();
+int rand_range(int min, int max);
+
+int rand_range(int min, int max, unsigned seed);

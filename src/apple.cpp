@@ -1,8 +1,8 @@
 
 #include "apple.hpp"
 #include "globals.hpp"
-#include <random>
-#include <iostream>
+#include "number_gen.hpp"
+
 
 apple::apple() :
     sprite ({ tile_size,tile_size })
