@@ -7,9 +7,6 @@
 #include "start_state.hpp"
 #include "game_state.hpp"
 
-// TODO: CMAKE
-
-
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(window_width, window_height), "SNEK");
