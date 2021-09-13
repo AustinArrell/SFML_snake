@@ -1,1 +1,3 @@
 # SFML_snake
+
+SNEK ON TWO PLANES

@@ -17,4 +17,8 @@ public:
 
     void set_pos(int x, int y);
 
+    void set_pos(sf::Vector2i new_pos);
+
+    sf::Vector2i get_pos();
+
 };

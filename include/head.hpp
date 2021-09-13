@@ -1,0 +1,36 @@
+#pragma once
+#include "SFML/Graphics.hpp"
+#include <vector>
+#include "segment.hpp"
+#include "globals.hpp"
+
+
+class head
+{
+    std::vector<segment> segment_stack;
+
+    sf::RectangleShape sprite;
+
+    sf::Vector2i pos = { window_width/tile_size/2, window_height/tile_size/2};
+    
+    direction dir;
+
+    bool check_collisions();
+
+    bool reset();
+    
+public:
+
+    head();
+
+    void set_dir(direction d);
+
+    direction get_dir() const;
+
+    void draw(sf::RenderWindow& window) const;
+
+    void update();
+
+    void generate_segment();
+
+};
