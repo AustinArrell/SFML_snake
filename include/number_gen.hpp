@@ -1,3 +1,6 @@
+
+#pragma once
+
 #include <random>
 
 int rand_range(int min, int max);

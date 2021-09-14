@@ -6,7 +6,7 @@
 #include <vector>
 
 //Default seed derived from current time
-unsigned seed = std::chrono::steady_clock::now().time_since_epoch().count();
+unsigned seed = std::random_device{}();
 
 //Create generators
 std::default_random_engine gen_default(seed);

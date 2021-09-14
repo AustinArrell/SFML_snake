@@ -1,1 +1,1 @@
--When quickly changing direction you are able to turn around which results in colliding with the segments behind you.
+*fixed* When quickly changing direction you are able to turn around which results in colliding with the segments behind you.

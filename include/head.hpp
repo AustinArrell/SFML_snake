@@ -14,6 +14,8 @@ class head
     sf::Vector2i pos = { window_width/tile_size/2, window_height/tile_size/2};
     
     direction dir;
+
+    direction queued_dir;
     
 public:
     bool check_collisions();

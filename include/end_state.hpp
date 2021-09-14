@@ -18,6 +18,14 @@ class end_state : public state
 
     head& player;
 
+    sf::Font font;
+
+    int& score;
+
+    sf::Text score_text;
+    sf::Text game_over_text;
+    sf::Text game_over_sub_text;
+
 public:
-    end_state(head& h);
+    end_state(head& h, int& s);
 };

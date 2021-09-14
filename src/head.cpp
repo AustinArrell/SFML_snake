@@ -3,17 +3,19 @@
 #include "head.hpp"
 #include "globals.hpp"
 #include <iostream>
+#include "number_gen.hpp"
 
 head::head()
 {
 
-    dir = direction::RIGHT;
+    queued_dir = static_cast<direction>(rand_range(0,3));
 
     sprite.setSize({ tile_size,tile_size });
 
     sprite.setPosition(pos.x * tile_size, pos.y * tile_size);
 
     sprite.setFillColor(sf::Color::Blue);
+
 }
 
 void head::draw(sf::RenderWindow& window) const
@@ -63,6 +65,7 @@ void head::update()
     }
 
     //Move the head based on direction
+    dir = queued_dir;
     switch (dir)
     {
     case direction::RIGHT:
@@ -109,7 +112,7 @@ void head::generate_segment()
 
 void head::set_dir(direction d)
 {
-    dir = d;
+    queued_dir = d;
 }
 
 direction head::get_dir() const

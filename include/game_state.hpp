@@ -21,6 +21,14 @@ class game_state : public state
 
     apple food;
 
+    sf::Font font;
+
+    int& score;
+
+    sf::Text score_text;
+
 public:
-    game_state(head& h);
+    game_state(head& h, int& s);
+
+    int get_score();
 };

@@ -12,12 +12,14 @@
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(window_width, window_height), "SNEK");
-    
+
     head player;
 
+    int score = 0;
+
     start_state start_state(player);
-    game_state game_state(player);
-    end_state end_state(player);
+    game_state game_state(player, score);
+    end_state end_state(player, score);
 
     add_state("start",start_state);
     add_state("game",game_state);
@@ -26,7 +28,7 @@ int main()
 
     sf::Clock clock;
     sf::Int64 frame_time;
-    sf::Int64 time_per_update = (sf::Int64)(1e6/8.0);
+    sf::Int64 time_per_update = (sf::Int64)(1e6/10.0);
     sf::Int64 cumulative_time = 0;
 
     while (window.isOpen())
