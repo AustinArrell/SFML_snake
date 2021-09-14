@@ -19,12 +19,10 @@ end_state::end_state(head& h, int& s):
         game_over_text.setString("Game Over");
         game_over_text.setCharacterSize(32);
         game_over_text.setPosition( (window_width/2)-(game_over_text.getLocalBounds().width/2), (window_height/2) - (game_over_text.getLocalBounds().height/2));
-        
 
         game_over_sub_text.setString("Press spacebar to try again.");
         game_over_sub_text.setCharacterSize(12);
-        game_over_sub_text.setPosition( (window_width/2)-20-(game_over_text.getLocalBounds().width/2), (window_height/2) + 32);
-        
+        game_over_sub_text.setPosition( (window_width/2)-(game_over_sub_text.getLocalBounds().width/2), (window_height/2) + 32);
 
     }
 

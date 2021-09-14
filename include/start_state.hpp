@@ -18,6 +18,12 @@ class start_state : public state
 
     head& player;
 
+    sf::Font font;
+
+    sf::Text high_score_text;
+    sf::Text start_text;
+    sf::Text start_sub_text;
+
 public:
     start_state(head& h);
 };
