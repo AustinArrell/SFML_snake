@@ -4,7 +4,7 @@
 start_state::start_state(head& h):
     player {h}
     {
-        font.loadFromFile("../fonts/PressStart2P.ttf");
+        font.loadFromFile("../resources/fonts/PressStart2P.ttf");
         high_score_text.setFont(font);
         high_score_text.setFillColor(sf::Color::White);
 

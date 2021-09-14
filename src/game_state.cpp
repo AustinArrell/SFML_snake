@@ -8,7 +8,7 @@ game_state::game_state(head& h, int& s):
     player {h},
     score {s}
     {
-        font.loadFromFile("../fonts/PressStart2P.ttf");
+        font.loadFromFile("../resources/fonts/PressStart2P.ttf");
         score_text.setFont(font);
         score_text.setString("Score:" + std::to_string(score));
         score_text.setCharacterSize(18);
