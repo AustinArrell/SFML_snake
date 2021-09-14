@@ -1,7 +1,6 @@
 # SFML_snake
-![](/resources/images/start_screen.png "Snake Main Menu")
-
 A simple game following the rules of a traditional [Snake](https://en.wikipedia.org/wiki/Snake_(video_game_genre) "Snake on Wikipedia") game. 
+![](/resources/images/start_screen.png "Snake Main Menu")
 
 ## Technologies
 This project uses: C++11, SFML 2.5.1, and Cmake.
